@@ -247,14 +247,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .top-nav nav { display: flex; gap: 22px; }
 
 .top-nav nav a {
+  position: relative;
   font-size: .72rem;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--pencil);
-  transition: color .2s ease, transform .2s ease;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: color .2s ease, transform .2s ease, background-color .25s ease;
 }
 
-.top-nav nav a:hover { color: var(--ink); transform: translateY(-1px); }
+.top-nav nav a:hover { color: var(--ink); transform: translateY(-1px); background: rgba(70,68,75,.06); }
+
+.top-nav nav a.active {
+  color: var(--ink);
+  background: rgba(70,68,75,.09);
+}
 
 .mobile-menu { display: none; border: 0; background: none; color: var(--ink); font-size: 1.1rem; }
 

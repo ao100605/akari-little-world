@@ -1,4 +1,4 @@
-// File: /Users/akari.oh/Downloads/akari-little-world/app/layout.tsx
+// File: /Users/akari.oh/Documents/GitHub/akari-little-world/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
