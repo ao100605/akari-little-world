@@ -5,6 +5,8 @@
 @import "../styles/experience.css";
 @import "../styles/resume.css";
 @import "../styles/contact.css";
+@import "../styles/project-page.css";
+@import "../styles/playground-page.css";
 
 :root {
   --paper: #fffdf8;

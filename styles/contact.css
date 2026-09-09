@@ -1,4 +1,4 @@
-.contact-section { background: linear-gradient(180deg, #fffaf1, #fdf5f7); }
+.contact-section { background: linear-gradient(180deg, #fffaf1, var(--paper)); }
 
 .contact-postcard {
   max-width: 1050px;
@@ -15,8 +15,22 @@
 .contact-copy > p:not(.handwritten) { max-width: 460px; line-height: 1.7; color: var(--pencil); }
 
 .contact-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 38px; }
-.contact-links a { border-bottom: 1px solid var(--ink); padding-bottom: 4px; font-size: .75rem; letter-spacing: .07em; transition: transform .2s ease, background .2s ease;}
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px; font-size: .75rem;
+  letter-spacing: .07em;
+  transition: transform .2s ease, background .2s ease, color 0.2s ease, border-color 0.2s ease;
+}
 .contact-links a:hover { transform: translateY(-2px); }
+
+.contact-icon { flex-shrink: 0; color: currentColor; }
+
+.github:hover { color: #a99bc4; border-color: #a99bc4; }
+.linkedin:hover { color: #8fb3cf; border-color: #8fb3cf; }
+.email:hover { color: #8fb495; border-color: #8fb495; }
 
 .postcard-art {
   min-height: 520px;
