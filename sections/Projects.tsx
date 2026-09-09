@@ -16,6 +16,12 @@ export default function Projects() {
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </div>
+
+      <div className="projects-footnote">
+        <span className="footnote-line" />
+        <span>more projects are waiting in the sketchbook</span>
+        <span className="footnote-sparkle">✦</span>
+      </div>
     </section>
   );
 }

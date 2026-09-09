@@ -1,0 +1,71 @@
+.about-section { background: linear-gradient(180deg, var(--paper), #fff9fb); }
+
+.about-layout {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.notebook-page {
+  position: relative;
+  min-height: 500px;
+  padding: 60px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0, transparent 34px, rgba(191,215,234,.25) 35px),
+    var(--paper);
+  box-shadow: 8px 12px 28px rgba(70,68,75,.08);
+}
+
+.rotate-left { transform: rotate(-2deg); }
+
+.notebook-page h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.3rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  margin: 25px 0;
+}
+
+.notebook-page p:not(.handwritten) {
+  max-width: 490px;
+  line-height: 1.85;
+  color: #68636c;
+}
+
+.annotation {
+  position: absolute;
+  right: 25px;
+  bottom: 28px;
+  font-family: var(--hand);
+  color: #9d7180;
+  transform: rotate(-4deg);
+  font-size: .85rem;
+}
+
+.paperclip {
+  position: absolute;
+  right: -15px;
+  top: 50px;
+  font-size: 5rem;
+  color: #9f9ba0;
+  transform: rotate(30deg);
+}
+
+.about-notes { display: grid; gap: 28px; }
+
+.sticky-note {
+  position: relative;
+  padding: 34px 32px 30px;
+  min-height: 135px;
+  box-shadow: 6px 10px 22px rgba(70,68,75,.07);
+}
+
+.sticky-note p:last-child { line-height: 1.55; margin-bottom: 0; }
+
+.sticky-note.sakura { background: #f6dbe3; transform: rotate(2deg); }
+.sticky-note.lavender { background: #e5e0f0; transform: rotate(-2deg); }
+.sticky-note.matcha { background: #dce9de; transform: rotate(1deg); }
+.tape-mini { width: 70px; height: 18px; background: rgba(255,255,255,.48); }

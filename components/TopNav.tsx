@@ -6,7 +6,7 @@ const navItems = [
   ["about", "About"],
   ["projects", "Projects"],
   ["playground", "Playground"],
-  ["experience", "Journey"],
+  // ["experience", "Journey"],
   ["resume", "Resume"],
   ["contact", "Contact"],
 ];

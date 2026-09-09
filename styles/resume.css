@@ -1,0 +1,50 @@
+.resume-section { background: #fffaf1; }
+
+.resume-wrap {
+  max-width: 980px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.envelope {
+  position: relative;
+  background: #eadfd0;
+  min-height: 330px;
+  box-shadow: 8px 12px 25px rgba(70,68,75,.10);
+  padding: 45px;
+  transform: rotate(-3deg);
+}
+.envelope-flap {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 120px;
+  background: #e1d3c2;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.resume-paper {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  padding: 32px;
+  margin-top: 30px;
+  min-height: 230px;
+  box-shadow: 4px 7px 15px rgba(70,68,75,.09);
+}
+.resume-paper h2 { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; margin: 12px 0; }
+
+.resume-actions h2 { font-family: var(--serif); font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 400; line-height: .98; margin: 18px 0 25px; }
+.resume-actions > p:not(.handwritten) { color: var(--pencil); line-height: 1.75; max-width: 500px; }
+
+.button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.button {
+  border: 1px solid var(--ink);
+  padding: 13px 17px;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  transition: transform .2s ease, background .2s ease;
+}
+.button:hover { transform: translateY(-2px); }
+.button.primary { background: var(--ink); color: var(--paper); }

@@ -1,0 +1,38 @@
+.playground-section { background: #f6f2fa; }
+
+.playground-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.play-card {
+  background: rgba(255,253,248,.75);
+  padding: 16px;
+  box-shadow: 6px 10px 25px rgba(70,68,75,.07);
+}
+
+.play-canvas-wrap {
+  height: 240px;
+  background: #eee9f6;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.play-canvas-wrap canvas { width: 100%; height: 100%; display: block; }
+
+.play-symbol {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(70,68,75,.25);
+  pointer-events: none;
+}
+
+.play-card h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin: 7px 0; }
+.play-card > div:last-child { padding: 0 12px 15px; }
+.play-card p:last-child { color: var(--pencil); line-height: 1.55; }
