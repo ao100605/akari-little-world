@@ -46,7 +46,7 @@ function EmailIcon() {
 export default function Contact() {
   return (
     <section className="section contact-section" id="contact">
-      <SectionKicker number="06" japanese="お問い合わせ">CONTACT</SectionKicker>
+      <SectionKicker number="05" japanese="お問い合わせ">CONTACT</SectionKicker>
       <div className="contact-postcard">
         <div className="contact-copy">
           <p className="handwritten">Dear future teammate,</p>

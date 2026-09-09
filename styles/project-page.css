@@ -339,11 +339,11 @@
 .project-lessons {
   max-width: 640px;
   margin: 0 auto;
-  text-align: center;
   padding-bottom: 1rem;
 }
 
 .project-lessons h3 {
+  text-align: center;
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(1.7rem, 3.5vw, 2.4rem);
@@ -362,6 +362,13 @@
 .project-lessons li {
   color: var(--ink);
   line-height: 1.7;
+}
+
+.project-lessons li::before {
+  content: "◦";
+  position: relative;
+  left: -15px;
+  color: var(--accent-solid);
 }
 
 /* prev / next */

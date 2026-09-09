@@ -65,19 +65,22 @@ export default function PlaygroundDetail({
       </motion.div>
 
       <motion.div className="playground-stage-wrap" {...fadeUp(0.1)}>
-        <div className="playground-stage">
-          {item.video ? (
-            // eslint-disable-next-line jsx-a11y/media-has-caption
-            <video src={item.video} controls playsInline />
-          ) : (
-            <div className="playground-stage-placeholder">
-              <span className="glyph" aria-hidden="true">{TYPE_GLYPH[item.type]}</span>
-              <span>Video Coming Soon</span>
-            </div>
-          )}
+        <div className="playground-stage-frame">
+          <div className="playground-stage-tape" aria-hidden="true" />
+          <div className="playground-stage">
+            {item.video ? (
+              // eslint-disable-next-line jsx-a11y/media-has-caption
+              <video src={item.video} controls playsInline />
+            ) : (
+              <div className="playground-stage-placeholder">
+                <span className="glyph" aria-hidden="true">{TYPE_GLYPH[item.type]}</span>
+                <span>Video Coming Soon</span>
+              </div>
+            )}
+          </div>
         </div>
-        {item.video && <p className="playground-stage-caption">watch it in motion</p>}
       </motion.div>
+      <p className="playground-stage-caption">taped onto the page</p>
 
       <motion.section className="playground-about" {...fadeUp()}>
         <h3>About</h3>

@@ -5,7 +5,7 @@ import SectionKicker from "@/components/SectionKicker";
 export default function Resume() {
   return (
     <section className="section resume-section" id="resume">
-      <SectionKicker number="05" japanese="履歴書">RESUME</SectionKicker>
+      <SectionKicker number="04" japanese="履歴書">RESUME</SectionKicker>
       <div className="resume-wrap">
         <div className="envelope">
           <div className="envelope-flap" />

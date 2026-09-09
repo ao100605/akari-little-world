@@ -1574,11 +1574,11 @@
 .project-lessons {
   max-width: 640px;
   margin: 0 auto;
-  text-align: center;
   padding-bottom: 1rem;
 }
 
 .project-lessons h3 {
+  text-align: center;
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(1.7rem, 3.5vw, 2.4rem);
@@ -1597,6 +1597,13 @@
 .project-lessons li {
   color: var(--ink);
   line-height: 1.7;
+}
+
+.project-lessons li::before {
+  content: "◦";
+  position: relative;
+  left: -15px;
+  color: var(--accent-solid);
 }
 
 /* prev / next */
@@ -1669,7 +1676,7 @@
   --accent-tint: rgba(70, 68, 75, 0.08);
   --accent-solid: var(--pencil);
   position: relative;
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 130px clamp(22px, 7vw, 90px) 130px;
 }
@@ -1724,15 +1731,15 @@
 
 .playground-page-header {
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto 2.6rem;
+  max-width: 640px;
+  margin: 0 auto 3rem;
 }
 
 .playground-page-header h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
-  margin: 0 0 0.7rem;
+  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  margin: 0 0 0.6rem;
 }
 
 .playground-page-category {
@@ -1782,23 +1789,48 @@
   border-color: var(--accent-solid);
 }
 
-/* interactive stage */
+/* interactive stage (taped onto the page, like the project hero) */
 
 .playground-stage-wrap {
-  padding: 10px 0 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 55px;
+}
+
+.playground-stage-frame {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  border-radius: 6px;
+  padding: 14px;
+  background: #fffdf9;
+  box-shadow: 0 22px 55px rgba(72, 66, 70, 0.14);
+  transform: rotate(-0.6deg);
+}
+
+.playground-stage-tape {
+  position: absolute;
+  z-index: 3;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 110px;
+  height: 26px;
+  background: rgba(242, 217, 155, 0.75);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .playground-stage {
   position: relative;
-  height: 380px;
-  border-radius: 20px;
+  aspect-ratio: 16 / 10;
+  border-radius: 3px;
   overflow: hidden;
   display: grid;
   place-items: center;
   background:
-    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.7), transparent 40%),
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.8), transparent 40%),
     var(--accent-tint);
-  box-shadow: 0 18px 45px rgba(72, 66, 70, 0.1);
 }
 
 .playground-stage video { width: 100%; height: 100%; display: block; object-fit: cover; }
@@ -1861,13 +1893,13 @@
 /* notes */
 
 .playground-notes {
-  max-width: 560px;
+  max-width: 640px;
   margin: 0 auto;
-  text-align: center;
   padding-bottom: 1rem;
 }
 
 .playground-notes h3 {
+  text-align: center;
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(1.6rem, 3.2vw, 2.2rem);
@@ -1886,6 +1918,13 @@
 .playground-notes li {
   color: var(--ink);
   line-height: 1.7;
+}
+
+.playground-notes li::before {
+  content: "◦";
+  position: relative;
+  left: -15px;
+  color: var(--accent-solid);
 }
 
 /* prev / next */
@@ -1933,7 +1972,6 @@
 @media (max-width: 560px) {
   .playground-page { padding: 105px 20px 90px; }
   .playground-page-top { margin-bottom: 2.6rem; }
-  .playground-stage { height: 300px; }
   .playground-page-nav { grid-template-columns: 1fr; }
   .playground-nav-link.next { text-align: left; align-items: flex-start; }
 }
@@ -1994,7 +2032,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .section-intro {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0 auto 65px;
   text-align: center;
 }
