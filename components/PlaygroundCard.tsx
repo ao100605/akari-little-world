@@ -83,6 +83,16 @@ export default function PlaygroundCard({
         <h3>{item.title}</h3>
         <p>{item.description}</p>
       </div>
+
+      <div className="tag-row">
+            {item.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+
+          <button className="text-link" type="button">
+            VIEW PROJECT <span aria-hidden="true">↗</span>
+          </button>
     </motion.article>
   );
 }

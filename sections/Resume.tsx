@@ -14,7 +14,7 @@ export default function Resume() {
             <h2>AKARI OH</h2>
             <p>Resume / Experience / Projects</p>
             <div className="resume-rule" />
-            <p className="handwritten">open me →</p>
+            <p className="handwritten">~ get to know me better ~</p>
           </div>
         </div>
         <div className="resume-actions">

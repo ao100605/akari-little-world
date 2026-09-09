@@ -23,7 +23,7 @@ export default function Hero() {
         <h2>AKARI&apos;S<br />LITTLE WORLD</h2>
         <div className="paper-line" />
         <p>Math-CS · HCI · Graphics · Creative Technology</p>
-        <span className="paper-stamp">✦ Hi ✦</span>
+        <span className="paper-stamp">✦ Hello ✦</span>
         <span className="paper-stamp">✦ こんにちは ✦</span>
         <span className="paper-stamp">✦ 你好 ✦</span>
       </div>

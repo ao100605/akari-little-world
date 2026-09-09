@@ -22,6 +22,8 @@ export type Playground = {
   id: string;
   title: string;
   description: string;
+  tags: string[];
+  year: string;
   type: "particles" | "orbit" | "draw";
 };
 
@@ -107,18 +109,24 @@ export const playgrounds: Playground[] = [
     id: "play-01",
     title: "Particle Garden",
     description: "Move your cursor through a tiny field of particles.",
+    tags: ["Python", "Animation"],
+    year: "2026",
     type: "particles",
   },
   {
     id: "play-02",
     title: "Little Orbit",
     description: "Hover to gently disturb a miniature orbiting system.",
+    tags: ["TouchDesign", "Audio Visualizer"],
+    year: "2026",
     type: "orbit",
   },
   {
     id: "play-03",
     title: "Doodle Pad",
     description: "Draw directly on the page.",
+    tags: ["Blender"],
+    year: "2026",
     type: "draw",
   },
 ];

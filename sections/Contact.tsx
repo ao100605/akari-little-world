@@ -13,9 +13,9 @@ export default function Contact() {
             I&apos;d love to hear from you.
           </p>
           <div className="contact-links">
-            <a href="#">GitHub ↗</a>
-            <a href="#">LinkedIn ↗</a>
-            <a href="#">Email ↗</a>
+            <a href="https://github.com/ao100605" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/akari-oh/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:a4oh@ucsd.edu" target="_blank" rel="noopener noreferrer">Email ↗</a>
           </div>
         </div>
         <div className="postcard-art">
