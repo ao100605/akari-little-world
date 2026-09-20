@@ -12,7 +12,7 @@ export default function Resume() {
           <div className="resume-paper">
             <p className="tiny-label">A LETTER FROM</p>
             <h2>AKARI OH</h2>
-            <p>Resume / Experience / Projects</p>
+            <p>Education / Experience / Projects</p>
             <div className="resume-rule" />
             <p className="handwritten">~ get to know me better ~</p>
           </div>
@@ -20,15 +20,12 @@ export default function Resume() {
         <div className="resume-actions">
           <p className="handwritten">a slightly more serious page</p>
           <h2>Everything useful,<br />in one place.</h2>
-          <p>
-            Keep this section clean and recruiter-friendly.
-          </p>
           <div className="button-row">
             <a className="button primary" href="/resume/Akari_Oh_resume.pdf" target="_blank" rel="noopener noreferrer">
               OPEN RESUME ↗
             </a>
             <a className="button" href="/resume/Akari_Oh_resume.pdf" download="Akari_Oh_Resume.pdf">
-              DOWNLOAD PDF
+              DOWNLOAD PDF ↓
             </a>
           </div>
         </div>

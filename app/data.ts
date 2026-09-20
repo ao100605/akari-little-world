@@ -34,6 +34,21 @@ export type Experience = {
   accent: "sakura" | "sky" | "matcha" | "butter";
 };
 
+export type PlaygroundEntry = {
+  /** Video shown on the playground detail page for this slide (a direct .mp4/.webm URL). */
+  video?: string;
+  /** Static image shown for this slide instead of a video (a direct .jpg/.png/.webp URL). */
+  image?: string;
+  /** Embed a live website or demo (e.g. a Spline scene) for this slide via iframe. */
+  embed?: string;
+  about?: string;
+  notes?: string[];
+  links?: {
+    live?: string;
+    github?: string;
+  };
+};
+
 export type Playground = {
   id: string;
   title: string;
@@ -42,16 +57,10 @@ export type Playground = {
   year: string;
   type: "particles" | "orbit" | "draw";
   category?: string;
-  about?: string;
-  notes?: string[];
-  links?: {
-    live?: string;
-    github?: string;
-  };
   /** Static preview image shown on the playground card. */
   image?: string;
-  /** Video shown on the playground detail page (a direct .mp4/.webm URL). */
-  video?: string;
+  /** One slide per video in the detail-page carousel; each slide has its own about/notes/links. */
+  entries: PlaygroundEntry[];
 };
 
 export const projects: Project[] = [
@@ -67,7 +76,7 @@ export const projects: Project[] = [
     accent: "sakura",
     category: "Web Design · Development",
     role: ["UI/UX Design", "Frontend Development", "Interaction Design"],
-    links: { live: "#", github: "#" },
+    // links: { live: "#", github: "#" },
     process: [
       {
         title: "Sketch",
@@ -99,7 +108,7 @@ export const projects: Project[] = [
     accent: "sky",
     category: "Web Development · Motion",
     role: ["Frontend Development", "Motion Design", "Accessibility"],
-    links: { live: "#" },
+    // links: { live: "#" },
     process: [
       {
         title: "Sketch",
@@ -131,7 +140,7 @@ export const projects: Project[] = [
     accent: "lavender",
     category: "Creative Coding · Graphics",
     role: ["Concept", "Graphics Programming", "Sound Design"],
-    links: { github: "#" },
+    // links: { github: "#" },
     process: [
       {
         title: "Sketch",
@@ -163,7 +172,7 @@ export const projects: Project[] = [
     accent: "matcha",
     category: "Data · Visualization",
     role: ["Data Analysis", "Visualization Design", "Storytelling"],
-    links: { github: "#" },
+    // links: { github: "#" },
     process: [
       {
         title: "Sketch",
@@ -218,50 +227,108 @@ export const experiences: Experience[] = [
 export const playgrounds: Playground[] = [
   {
     id: "play-01",
+    title: "Visual Designs",
+    description: "Projects done for my ICAM (interdisciplinary computing and the arts) minor.",
+    tags: ["TouchDesign", "Audio Visualizer", "Python"],
+    year: "2025-2026",
+    type: "orbit",
+    category: "Motion · Audio Visualizer",
+    entries: [
+      {
+        about:
+          "An audio-reactive dancing wave of lines built with TouchDesigner for VIS 145A: Time- and Process-Based Digital Media I.",
+        notes: [
+          "Referenced tutorials: www.youtube.com/watch?v=R7sAomk2vR4, www.youtube.com/watch?v=kcHhg9JXE90, www.youtube.com/watch?v=bBbyMkzTNpg",
+          "I wanted to focus on visual aesthetics and trying to really make audio waves visible",
+        ],
+        video: "/playground/play-01/the_shore.mp4",
+      },
+      {
+        about:
+          "Pendulum swirls made with pygame for VIS 142: Practices in Computing Arts.",
+        notes: [
+          "Referenced tutorial: www.youtube.com/watch?v=NBWMtlbbOag&t=475s",
+          "I wanted to explore the connection between physics and visuals",
+        ],
+        links: {github: "https://github.com/ao100605/pendulum-swirls"},
+        video: "/playground/play-01/pendulum_swirls.mp4",
+      },
+    ],
+  },
+  {
+    id: "play-02",
+    title: "3D Modeling",
+    description: "Exploring 3D modeling as a hobby.",
+    tags: ["Blender", "Spline", "Fusion360"],
+    year: "2020-2026",
+    type: "draw",
+    category: "3D · Interaction",
+    entries: [
+      {
+        about:
+          "3D popsicle model built with Spline that plays music when clicked on.",
+        notes: [
+          "Tutorial: //www.youtube.com/watch?v=TO-hT6jyDKU&t=66s",
+          "First introduction into Spline, built just to learn the platform.",
+        ],
+        embed: "https://my.spline.design/popsicle-MlzVlGOrfBlTe69RZj1XoIN6/",
+      },
+      {
+        about:
+          "3D model of Toothless from How To Train Your Dragon movie built in Fusion360.",
+        notes: [
+          "Part of a project for a 3D Modeling elective in high school",
+          "Sculpted the mesh using reference images found online for multiple angles",
+        ],
+        image: "/playground/play-02/toothless.png"
+      },
+    ],
+  },
+  {
+    id: "play-03",
     title: "IRL Crafts",
     description: "Some crafts I've done throughout the years.",
     tags: ["Embroidery", "Origami", "Needle Felt", "Fuse Beads"],
     year: "2018-2026",
     type: "particles",
     category: "Hands On · Tinkering",
-    about:
-      "A tiny sandbox for playing with attraction and drag. Every dot drifts on its own until the cursor comes close, then it leans toward it and settles again.",
-    notes: [
-      "Started as a one-file sketch just to see how a crowd of points would feel.",
-      "The gentle drag on each particle ended up mattering more than the pull strength.",
+    entries: [
+      {
+        about:
+          "Wisteria embroidery on a Chinese round fan.",
+        notes: [
+          "Finished in one day as a project in middle school",
+          "Learned to be patient and focused for a long period of time",
+        ],
+        image: "/playground/play-03/embroidery.jpg"
+      },
+      {
+        about:
+          "Mother holding child & heart with flower origami.",
+        notes: [
+          "Made as a mother's day gift, following tutorials online",
+          "Required attention to detail and precision in folding",
+        ],
+        image: "/playground/play-03/origami.jpg"
+      },
+      {
+        about:
+          "3D emojis made with needle felting (a dry craft that uses special barbed needles to sculpt and interlock wool fibers into firm 2D designs or 3D objects).",
+        notes: [
+          "Made into keychains to sell to classmates for a high school entrepreneurship project",
+          "Fun expereience despite accidently poking myself a lot in the process",
+        ],
+        image: "/playground/play-03/needle-felt.jpg"
+      },
+      {
+        about:
+          "Cute fuse bead designs (small, hollow plastic tubes that you arrange on a pegboard to create flat pixel art and then melt together using a household iron).",
+        notes: [
+          "Made as decorations and functional coasters",
+          "Finished within 3.5 hours in one sitting (relatively fast)",
+        ],
+        image: "/playground/play-03/fuse-beads.jpg"
+      },
     ],
-    links: { github: "#" },
-  },
-  {
-    id: "play-02",
-    title: "Little Orbit",
-    description: "Hover to gently disturb a miniature orbiting system.",
-    tags: ["TouchDesign", "Audio Visualizer"],
-    year: "2026",
-    type: "orbit",
-    category: "Motion · Audio Visualizer",
-    about:
-      "A small orbiting system built to react to sound. Hovering nudges the paths off balance for a moment before they settle back into rhythm.",
-    notes: [
-      "Built first in TouchDesign to prototype the timing before touching any code.",
-      "Letting the system wobble and recover felt more alive than forcing it to loop perfectly.",
-    ],
-    links: { github: "#" },
-  },
-  {
-    id: "play-03",
-    title: "3D Modeling",
-    description: "Draw directly on the page.",
-    tags: ["Spline", "Blender"],
-    year: "2026",
-    type: "draw",
-    category: "3D · Interaction",
-    about:
-      "A quick experiment in letting a page feel like scratch paper — somewhere to leave a mark without it needing to mean anything.",
-    notes: [
-      "Modeled a few reference shapes in Blender before simplifying everything down to a single stroke.",
-      "The least polished version ended up being the most fun to use.",
-    ],
-    links: { live: "https://my.spline.design/popsicle-MlzVlGOrfBlTe69RZj1XoIN6/" },
   },
 ];

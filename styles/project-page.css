@@ -170,9 +170,11 @@
 }
 
 .project-hero-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-hero-placeholder {
@@ -290,6 +292,7 @@
 }
 
 .process-step-visual {
+  position: relative;
   aspect-ratio: 4 / 3;
   border-radius: 10px;
   margin-bottom: 0.9rem;
@@ -303,9 +306,11 @@
 }
 
 .process-step-visual img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .process-step-visual span {

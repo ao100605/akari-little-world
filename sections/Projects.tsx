@@ -8,7 +8,7 @@ export default function Projects() {
       <SectionKicker number="02" japanese="プロジェクト">PROJECTS</SectionKicker>
       <div className="section-intro">
         <h2>Things I&apos;ve made along the way.</h2>
-        <p>These are placeholders for now — the data lives in one simple file, so expanding this section is easy.</p>
+        <p>Fun projects live here. Click into them to see more details!</p>
       </div>
 
       <div className="project-grid">

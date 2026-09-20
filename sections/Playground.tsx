@@ -8,7 +8,7 @@ export default function Playground() {
       <SectionKicker number="03" japanese="遊び場">PLAYGROUND</SectionKicker>
       <div className="section-intro">
         <h2>Some things don&apos;t need a reason.</h2>
-        <p>Interactive experiments live here. Add a new item to the data file when you want another playground.</p>
+        <p>Little experiments and creative sparks live here.</p>
       </div>
       <div className="playground-grid">
         {playgrounds.map((item) => (

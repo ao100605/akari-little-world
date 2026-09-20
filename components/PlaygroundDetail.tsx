@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Playground } from "@/app/data";
@@ -32,6 +33,11 @@ export default function PlaygroundDetail({
   prevItem: Playground;
   nextItem: Playground;
 }) {
+  const [slide, setSlide] = useState(0);
+  const entries = item.entries;
+  const current = entries[slide];
+  const hasCarousel = entries.length > 1;
+
   return (
     <main className={`playground-page type-${item.type}`}>
       <div className="playground-page-top">
@@ -56,10 +62,10 @@ export default function PlaygroundDetail({
             <span key={tag}>{tag}</span>
           ))}
         </div>
-        {item.links && (item.links.live || item.links.github) && (
+        {current.links && (current.links.live || current.links.github) && (
           <div className="playground-page-links">
-            {item.links.live && <a href={item.links.live}>VISIT LIVE ↗</a>}
-            {item.links.github && <a href={item.links.github}>VIEW CODE ↗</a>}
+            {current.links.live && <a href={current.links.live} target="_blank" rel="noopener noreferrer">VISIT LIVE ↗</a>}
+            {current.links.github && <a href={current.links.github} target="_blank" rel="noopener noreferrer">VIEW CODE ↗</a>}
           </div>
         )}
       </motion.div>
@@ -67,33 +73,83 @@ export default function PlaygroundDetail({
       <motion.div className="playground-stage-wrap" {...fadeUp(0.1)}>
         <div className="playground-stage-frame">
           <div className="playground-stage-tape" aria-hidden="true" />
+
+          {hasCarousel && (
+            <button
+              type="button"
+              className="stage-arrow stage-arrow-left"
+              onClick={() => setSlide((i) => (i - 1 + entries.length) % entries.length)}
+              aria-label="Previous video"
+            >
+              ‹
+            </button>
+          )}
+
           <div className="playground-stage">
-            {item.video ? (
+            {current.video ? (
               // eslint-disable-next-line jsx-a11y/media-has-caption
-              <video src={item.video} controls playsInline />
+              <video key={current.video} src={current.video} controls playsInline />
+            ) : current.embed ? (
+              <iframe
+                key={current.embed}
+                src={current.embed}
+                title={`${item.title} embed`}
+                loading="lazy"
+                allow="fullscreen; autoplay"
+              />
+            ) : current.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img key={current.image} src={current.image} alt={`${item.title} preview`} />
             ) : (
               <div className="playground-stage-placeholder">
                 <span className="glyph" aria-hidden="true">{TYPE_GLYPH[item.type]}</span>
-                <span>Video Coming Soon</span>
+                <span>Coming Soon</span>
               </div>
             )}
           </div>
-        </div>
-      </motion.div>
-      <p className="playground-stage-caption">taped onto the page</p>
 
-      <motion.section className="playground-about" {...fadeUp()}>
+          {hasCarousel && (
+            <button
+              type="button"
+              className="stage-arrow stage-arrow-right"
+              onClick={() => setSlide((i) => (i + 1) % entries.length)}
+              aria-label="Next video"
+            >
+              ›
+            </button>
+          )}
+        </div>
+
+        {hasCarousel && (
+          <div className="stage-dots" role="tablist" aria-label="Select video">
+            {entries.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                role="tab"
+                aria-selected={i === slide}
+                aria-label={`Show video ${i + 1} of ${entries.length}`}
+                className={`stage-dot ${i === slide ? "active" : ""}`}
+                onClick={() => setSlide(i)}
+              />
+            ))}
+          </div>
+        )}
+      </motion.div>
+      {/* <p className="playground-stage-caption">taped onto the page</p> */}
+
+      <motion.section className="playground-about" key={`about-${slide}`} {...fadeUp()}>
         <h3>About</h3>
-        <p>{item.about ?? item.description}</p>
+        <p>{current.about ?? item.description}</p>
       </motion.section>
 
-      {item.notes && item.notes.length > 0 && (
+      {current.notes && current.notes.length > 0 && (
         <>
           <div className="playground-sparkles" aria-hidden="true">✦ ✦ ✦</div>
-          <motion.section className="playground-notes" {...fadeUp()}>
+          <motion.section className="playground-notes" key={`notes-${slide}`} {...fadeUp()}>
             <h3>Notes</h3>
             <ul>
-              {item.notes.map((note) => (
+              {current.notes.map((note) => (
                 <li key={note}>{note}</li>
               ))}
             </ul>

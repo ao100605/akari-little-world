@@ -60,8 +60,8 @@ export default function ProjectDetail({
         </div>
         {project.links && (project.links.live || project.links.github) && (
           <div className="project-page-links">
-            {project.links.live && <a href={project.links.live}>VISIT LIVE ↗</a>}
-            {project.links.github && <a href={project.links.github}>VIEW CODE ↗</a>}
+            {project.links.live && <a href={project.links.live} target="_blank" rel="noopener noreferrer">VISIT LIVE ↗</a>}
+            {project.links.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer">VIEW CODE ↗</a>}
           </div>
         )}
       </motion.div>
@@ -82,7 +82,7 @@ export default function ProjectDetail({
           </div>
         </div>
       </motion.div>
-      <p className="project-hero-caption">taped onto the page</p>
+      {/* <p className="project-hero-caption">taped onto the page</p> */}
 
       <motion.div className="project-detail-grid" {...fadeUp()}>
         <div>

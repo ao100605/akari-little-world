@@ -15,7 +15,7 @@ export default function About() {
               software engineering, graphics, HCI, and creative technology.
             </p>
             <p>
-              This page is a placeholder for the real story you want to tell.
+              ...
             </p>
             <span className="annotation">← write your own story here</span>
           </div>

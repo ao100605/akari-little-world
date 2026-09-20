@@ -32,7 +32,7 @@
 .play-orbit .play-preview { --accent-tint: rgba(216, 210, 232, 0.4); --accent-solid: #a99bc4; }
 .play-draw .play-preview { --accent-tint: rgba(233, 184, 199, 0.35); --accent-solid: #d99cb3; }
 
-.play-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.play-preview img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
 
 .play-card-link { display: block; }
 
