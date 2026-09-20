@@ -471,7 +471,7 @@
 .idea-paper small {
   position: absolute;
   left: 27px;
-  bottom: 18px;
+  bottom: 24px;
   color: #99918b;
   font: 600 .45rem/1 Arial, sans-serif;
   letter-spacing: .12em;
@@ -481,12 +481,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
-  margin-top: 27px;
+  margin-top: 15px;
 }
 
 .wireframe i {
   display: block;
-  height: 34px;
+  height: 30px;
   border: 1px dashed #a9aaa0;
   background: rgba(255,255,255,.35);
 }

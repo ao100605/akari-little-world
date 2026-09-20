@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Project } from "@/app/data";
@@ -33,6 +34,11 @@ export default function ProjectDetail({
   prevProject: Project;
   nextProject: Project;
 }) {
+  const [slide, setSlide] = useState(0);
+  const gallery = project.gallery ?? [];
+  const current = gallery[slide];
+  const hasCarousel = gallery.length > 1;
+
   return (
     <main className={`project-page ${project.accent}`}>
       <div className="project-page-top">
@@ -69,10 +75,25 @@ export default function ProjectDetail({
       <motion.div className="project-hero-wrap" {...fadeUp(0.1)}>
         <div className="project-hero-frame">
           <div className="project-hero-tape" aria-hidden="true" />
+
+          {hasCarousel && (
+            <button
+              type="button"
+              className="stage-arrow stage-arrow-left"
+              onClick={() => setSlide((i) => (i - 1 + gallery.length) % gallery.length)}
+              aria-label="Previous media"
+            >
+              ‹
+            </button>
+          )}
+
           <div className="project-hero-image">
-            {project.heroImage ? (
+            {current?.video ? (
+              // eslint-disable-next-line jsx-a11y/media-has-caption
+              <video key={current.video} src={current.video} controls playsInline />
+            ) : current?.image ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={project.heroImage} alt={`${project.title} screenshot`} />
+              <img key={current.image} src={current.image} alt={`${project.title} screenshot`} />
             ) : (
               <div className="project-hero-placeholder">
                 <span className="glyph">{OBJECT_GLYPH[project.object]}</span>
@@ -80,7 +101,34 @@ export default function ProjectDetail({
               </div>
             )}
           </div>
+
+          {hasCarousel && (
+            <button
+              type="button"
+              className="stage-arrow stage-arrow-right"
+              onClick={() => setSlide((i) => (i + 1) % gallery.length)}
+              aria-label="Next media"
+            >
+              ›
+            </button>
+          )}
         </div>
+
+        {hasCarousel && (
+          <div className="stage-dots" role="tablist" aria-label="Select media">
+            {gallery.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                role="tab"
+                aria-selected={i === slide}
+                aria-label={`Show media ${i + 1} of ${gallery.length}`}
+                className={`stage-dot ${i === slide ? "active" : ""}`}
+                onClick={() => setSlide(i)}
+              />
+            ))}
+          </div>
+        )}
       </motion.div>
       {/* <p className="project-hero-caption">taped onto the page</p> */}
 

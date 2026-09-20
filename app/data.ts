@@ -4,6 +4,13 @@ export type ProjectProcessStep = {
   image?: string;
 };
 
+export type ProjectMediaItem = {
+  /** Static image for this gallery slide (a direct .jpg/.png/.webp URL). */
+  image?: string;
+  /** Video for this gallery slide (a direct .mp4/.webm URL). */
+  video?: string;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -15,13 +22,13 @@ export type Project = {
   accent: "sakura" | "sky" | "matcha" | "lavender" | "butter";
   category?: string;
   role?: string[];
-  heroImage?: string;
   links?: {
     live?: string;
     github?: string;
   };
   process?: ProjectProcessStep[];
-  gallery?: string[];
+  /** Carousel of images/videos in the hero area; the rest of the page stays the same regardless of which slide is selected. */
+  gallery?: ProjectMediaItem[];
   lessons?: string[];
 };
 
@@ -66,17 +73,22 @@ export type Playground = {
 export const projects: Project[] = [
   {
     id: "project-01",
-    title: "Project One",
-    subtitle: "Your first featured project",
+    title: "Kana Compass",
+    subtitle: "iOS mobile app vibe coding experiment",
     description:
-      "Placeholder copy for a project case study. Replace this with what you built, why you built it, and what you learned.",
-    tags: ["React", "TypeScript", "UI/UX"],
+      "Placeholder project description 1.",
+    tags: ["SwiftUI", "Xcode", "UI/UX", "Education", "AI Agents"],
     year: "2026",
-    object: "book",
-    accent: "sakura",
-    category: "Web Design · Development",
-    role: ["UI/UX Design", "Frontend Development", "Interaction Design"],
-    // links: { live: "#", github: "#" },
+    object: "note",
+    accent: "sky",
+    category: "App Design · Development · Iterative Testing · Vibe Coding",
+    role: ["UI/UX Design", "Level Design", "Interaction Design"],
+    links: { github: "https://github.com/ao100605/kana-compass" },
+    gallery: [
+      { image: "/projects/project-01/kana-compass-1.jpg" },
+      { image: "/projects/project-01/kana-compass-2.jpg" },
+      { image: "/projects/project-01/kana-compass-3.jpg" },
+    ],
     process: [
       {
         title: "Sketch",
@@ -92,23 +104,23 @@ export const projects: Project[] = [
       },
     ],
     lessons: [
-      "Prototyping on paper first saved a lot of rework later.",
+      "Prototyping various design with ChatGPT first saved a lot of rework later.",
       "Small motion details make an interface feel much more alive.",
     ],
   },
   {
     id: "project-02",
-    title: "Project Two",
-    subtitle: "An interactive web experience",
+    title: "HKN Projects Portal",
+    subtitle: "Full stack website with an AI chatbot",
     description:
-      "A placeholder project card designed to show how different project types can live in the same visual system.",
-    tags: ["Next.js", "CSS", "Animation"],
+      "Placeholder project description 2.",
+    tags: ["Next.js", "React", "TypeScript", "Decap CMS", "RAG"],
     year: "2026",
     object: "screen",
-    accent: "sky",
-    category: "Web Development · Motion",
-    role: ["Frontend Development", "Motion Design", "Accessibility"],
-    // links: { live: "#" },
+    accent: "lavender",
+    category: "Web Development · Content Management · AI Chatbot",
+    role: ["Frontend Development", "CMS Development", "Prompt Engineering"],
+    links: { github: "https://github.com/hknkappapsiprojects/Projects-Portal" },
     process: [
       {
         title: "Sketch",
@@ -130,17 +142,17 @@ export const projects: Project[] = [
   },
   {
     id: "project-03",
-    title: "Project Three",
-    subtitle: "A creative coding experiment",
+    title: "Data Science Analysis",
+    subtitle: "Project for COGS 108: Data Science in Practice",
     description:
-      "Use this slot for graphics, visualization, a hackathon project, or another experiment.",
-    tags: ["C++", "Graphics", "Creative"],
+      "Placeholder project description 3.",
+    tags: ["Data Science", "Python", "Research"],
     year: "2025",
-    object: "note",
-    accent: "lavender",
-    category: "Creative Coding · Graphics",
-    role: ["Concept", "Graphics Programming", "Sound Design"],
-    // links: { github: "#" },
+    object: "book",
+    accent: "sakura",
+    category: "Data analysis · Pandas · Seaborn · Matplotlib",
+    role: ["Concept", "Data Cleaning", "Written Output"],
+    links: { github: "https://github.com/ao100605/Group078_WI25" },
     process: [
       {
         title: "Sketch",
@@ -162,34 +174,34 @@ export const projects: Project[] = [
   },
   {
     id: "project-04",
-    title: "Project Four",
-    subtitle: "Something you are proud of",
+    title: "CSE 110 (in progress)",
+    subtitle: "Project for CSE 110: Software Engineering",
     description:
-      "More placeholder content. The layout intentionally supports adding as many projects as you want.",
-    tags: ["Python", "Data", "Design"],
-    year: "2025",
+      "Placeholder project description 4.",
+    tags: ["JavaScript", "Data", "Design"],
+    year: "2026",
     object: "photo",
     accent: "matcha",
-    category: "Data · Visualization",
+    category: "Software Engineering · Agile Design",
     role: ["Data Analysis", "Visualization Design", "Storytelling"],
     // links: { github: "#" },
     process: [
       {
         title: "Sketch",
-        description: "Explored the raw data and sketched a few chart types that could tell the story well.",
+        description: "...",
       },
       {
         title: "Design",
-        description: "Designed a small visual language for the charts, from color to typography.",
+        description: "...",
       },
       {
         title: "Build",
-        description: "Built the pipeline in Python and generated the final set of visuals.",
+        description: "...",
       },
     ],
     lessons: [
-      "The clearest chart is usually the simplest one, not the fanciest.",
-      "Talking to people about what they wanted to know shaped the whole project.",
+      "...",
+      "...",
     ],
   },
 ];
@@ -241,7 +253,7 @@ export const playgrounds: Playground[] = [
           "Referenced tutorials: www.youtube.com/watch?v=R7sAomk2vR4, www.youtube.com/watch?v=kcHhg9JXE90, www.youtube.com/watch?v=bBbyMkzTNpg",
           "I wanted to focus on visual aesthetics and trying to really make audio waves visible",
         ],
-        video: "/playground/play-01/the_shore.mp4",
+        video: "/playground/icam/the_shore.mp4",
       },
       {
         about:

@@ -12,7 +12,7 @@ export default function Resume() {
           <div className="resume-paper">
             <p className="tiny-label">A LETTER FROM</p>
             <h2>AKARI OH</h2>
-            <p>Education / Experience / Projects</p>
+            <p>Education / Skills / Experience / Projects / Leadership / Clubs</p>
             <div className="resume-rule" />
             <p className="handwritten">~ get to know me better ~</p>
           </div>

@@ -22,7 +22,7 @@ export default function Hero() {
         <p className="tiny-label">WELCOME TO</p>
         <h2>AKARI&apos;S<br />LITTLE WORLD</h2>
         <div className="paper-line" />
-        <p>Math-CS · HCI · Graphics · Creative Technology</p>
+        <p>Math-Computer Science · Computing Arts · HCI · Graphics · Creative Technology</p>
         <span className="paper-stamp">✦ Hello ✦</span>
         <span className="paper-stamp">✦ こんにちは ✦</span>
         <span className="paper-stamp">✦ 你好 ✦</span>

@@ -38,7 +38,7 @@
 
 .play-preview-placeholder {
   color: var(--accent-solid);
-  font-size: 1.9rem;
+  font-size: 3rem;
   pointer-events: none;
 }
 
