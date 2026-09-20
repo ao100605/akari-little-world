@@ -1,6 +1,6 @@
 # Akari's Little World
 
-A playful, paper-inspired personal portfolio built with Next.js, TypeScript, and Framer Motion. The site presents projects, playground experiments, experience, and contact info as a single scrolling journey, with a small plane that travels along the page as you scroll.
+A playful, paper-inspired personal portfolio website built with Next.js, TypeScript, and Framer Motion. The site presents about me, projects, playground experiments, resume, and contact info as a single scrolling journey, with a small plane that travels along the page as you scroll.
 
 ## Tech stack
 
@@ -51,6 +51,8 @@ Add, remove, or reorder entries there; the page sections and components render w
 ## Deployment
 
 The project is set up to deploy on [Vercel](https://vercel.com/) with zero configuration — connect the repository and it will build and deploy on every push to `main`.
+
+Live at ~ https://akari-little-world.vercel.app/ ~
 
 ## License
 
