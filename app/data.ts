@@ -218,12 +218,12 @@ export const experiences: Experience[] = [
 export const playgrounds: Playground[] = [
   {
     id: "play-01",
-    title: "Particle Garden",
-    description: "Move your cursor through a tiny field of particles.",
-    tags: ["Python", "Animation"],
-    year: "2026",
+    title: "IRL Crafts",
+    description: "Some crafts I've done throughout the years.",
+    tags: ["Embroidery", "Origami", "Needle Felt", "Fuse Beads"],
+    year: "2018-2026",
     type: "particles",
-    category: "Creative Coding · Motion",
+    category: "Hands On · Tinkering",
     about:
       "A tiny sandbox for playing with attraction and drag. Every dot drifts on its own until the cursor comes close, then it leans toward it and settles again.",
     notes: [
@@ -239,7 +239,7 @@ export const playgrounds: Playground[] = [
     tags: ["TouchDesign", "Audio Visualizer"],
     year: "2026",
     type: "orbit",
-    category: "Audio Visualizer · Motion",
+    category: "Motion · Audio Visualizer",
     about:
       "A small orbiting system built to react to sound. Hovering nudges the paths off balance for a moment before they settle back into rhythm.",
     notes: [
@@ -250,9 +250,9 @@ export const playgrounds: Playground[] = [
   },
   {
     id: "play-03",
-    title: "Doodle Pad",
+    title: "3D Modeling",
     description: "Draw directly on the page.",
-    tags: ["Blender"],
+    tags: ["Spline", "Blender"],
     year: "2026",
     type: "draw",
     category: "3D · Interaction",
@@ -262,6 +262,6 @@ export const playgrounds: Playground[] = [
       "Modeled a few reference shapes in Blender before simplifying everything down to a single stroke.",
       "The least polished version ended up being the most fun to use.",
     ],
-    links: { github: "#" },
+    links: { live: "https://my.spline.design/popsicle-MlzVlGOrfBlTe69RZj1XoIN6/" },
   },
 ];

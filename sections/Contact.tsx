@@ -1,4 +1,35 @@
+"use client";
+
+import { useState } from "react";
 import SectionKicker from "@/components/SectionKicker";
+
+const POSTCARD_IMAGE_CANDIDATES = ["/contact/postcard.jpg", "/contact/postcard.jpeg", "/contact/postcard.png"];
+
+function PostcardArt() {
+  const [candidateIndex, setCandidateIndex] = useState(0);
+  const imageFound = candidateIndex < POSTCARD_IMAGE_CANDIDATES.length;
+
+  if (imageFound) {
+    return (
+      <img
+        key={POSTCARD_IMAGE_CANDIDATES[candidateIndex]}
+        src={POSTCARD_IMAGE_CANDIDATES[candidateIndex]}
+        alt="Postcard"
+        className="postcard-image"
+        onError={() => setCandidateIndex((i) => i + 1)}
+      />
+    );
+  }
+
+  return (
+    <>
+      <div className="sun">✦</div>
+      <div className="mountain mountain-one" />
+      <div className="mountain mountain-two" />
+      <div className="landing-plane">✈</div>
+    </>
+  );
+}
 
 function GithubIcon() {
   return (
@@ -68,10 +99,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="postcard-art">
-          <div className="sun">✦</div>
-          <div className="mountain mountain-one" />
-          <div className="mountain mountain-two" />
-          <div className="landing-plane">✈</div>
+          <PostcardArt />
         </div>
       </div>
     </section>

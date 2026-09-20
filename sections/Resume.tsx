@@ -21,14 +21,13 @@ export default function Resume() {
           <p className="handwritten">a slightly more serious page</p>
           <h2>Everything useful,<br />in one place.</h2>
           <p>
-            Keep this section clean and recruiter-friendly. Replace the
-            placeholder button with your actual PDF or resume route.
+            Keep this section clean and recruiter-friendly.
           </p>
           <div className="button-row">
-            <a className="button primary" href="#" onClick={(e) => e.preventDefault()}>
+            <a className="button primary" href="/resume/Akari_Oh_resume.pdf" target="_blank" rel="noopener noreferrer">
               OPEN RESUME ↗
             </a>
-            <a className="button" href="#" onClick={(e) => e.preventDefault()}>
+            <a className="button" href="/resume/Akari_Oh_resume.pdf" download="Akari_Oh_Resume.pdf">
               DOWNLOAD PDF
             </a>
           </div>
