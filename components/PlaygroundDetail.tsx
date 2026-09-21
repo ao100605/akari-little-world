@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import type { Playground } from "@/app/data";
 
 const TYPE_GLYPH: Record<Playground["type"], string> = {
-  particles: "✦",
-  orbit: "◐",
+  orbit: "✿",
   draw: "✎",
+  particles: "✦",
 };
 
 function fadeUp(delay = 0) {

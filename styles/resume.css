@@ -24,6 +24,7 @@
   background: #e1d3c2;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
+
 .resume-paper {
   position: relative;
   z-index: 1;
@@ -34,9 +35,9 @@
   box-shadow: 4px 7px 15px rgba(70,68,75,.09);
 }
 .resume-paper h2 { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; margin: 12px 0; }
+.resume-paper > p:not(.handwritten) { color: var(--pencil); line-height: 1.7; max-width: 500px; }
 
 .resume-actions h2 { font-family: var(--serif); font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 400; line-height: .98; margin: 18px 0 25px; }
-.resume-actions > p:not(.handwritten) { color: var(--pencil); line-height: 1.75; max-width: 500px; }
 
 .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .button {

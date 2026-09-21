@@ -9,7 +9,7 @@ export default function About() {
         <div className="notebook-page rotate-left">
           <div className="notebook-lines">
             <p className="handwritten">Dear visitor,</p>
-            <h2>I like making<br />things that feel alive.</h2>
+            <h2>I like making things that feel alive.</h2>
             <p>
               I&apos;m a Math-CS student interested in the space between
               software engineering, graphics, HCI, and creative technology.
