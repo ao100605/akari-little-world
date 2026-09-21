@@ -15,7 +15,8 @@ export default function About() {
               software engineering, graphics, HCI, and creative technology.
             </p>
             <p>
-              ...
+              I come from a very international background — born in Japan 🇯🇵, 
+              grew up in China 🇨🇳, studying in the US 🇺🇸.
             </p>
             <span className="annotation">← write your own story here</span>
           </div>
@@ -24,13 +25,13 @@ export default function About() {
 
         <div className="about-notes">
           <StickyNote title="BUILD" accent="sakura">
-            Web apps · full-stack · engineering
+            full-stack web · mobile apps · engineering
           </StickyNote>
           <StickyNote title="CREATE" accent="lavender">
-            Graphics · interaction · creative coding
+            graphics · interaction · creative coding
           </StickyNote>
           <StickyNote title="EXPLORE" accent="matcha">
-            HCI · design · new ideas
+            AI · design · HCI · new ideas
           </StickyNote>
         </div>
       </div>

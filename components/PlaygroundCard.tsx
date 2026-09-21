@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { playgrounds } from "@/app/data";
 
 const TYPE_GLYPH: Record<(typeof playgrounds)[number]["type"], string> = {
-  particles: "✦",
-  orbit: "◐",
+  orbit: "✿",
   draw: "✎",
+  particles: "✦",
 };
 
 export default function PlaygroundCard({
