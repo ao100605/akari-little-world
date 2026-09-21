@@ -76,7 +76,7 @@ export const projects: Project[] = [
     title: "Kana Compass",
     subtitle: "iOS mobile app vibe coding experiment",
     description:
-      "Placeholder project description 1.",
+      "A progressive skill-building app across 4 distinct practice modes for the Japanese 12-key flick keyboard, using a custom swipe-gesture engine with a toggleable hint system and real-time visual accuracy feedback.",
     tags: ["SwiftUI", "Xcode", "UI/UX", "Education", "AI Agents"],
     year: "2026",
     object: "note",
@@ -104,22 +104,23 @@ export const projects: Project[] = [
       },
     ],
     lessons: [
-      "Prototyping various design with ChatGPT first saved a lot of rework later.",
-      "Small motion details make an interface feel much more alive.",
+      "Prototyping various design with ChatGPT first saved a lot of rework later",
+      "Small motion details make an interface feel much more alive",
+      "Initial instructions make a app feel much more welcoming and easy to learn",
     ],
   },
   {
     id: "project-02",
     title: "HKN Projects Portal",
-    subtitle: "Full stack website with an AI chatbot",
+    subtitle: "Full stack website with an AI chatbot (team of 7)",
     description:
-      "Placeholder project description 2.",
+      "A full-stack web portal for UCSD's HKN projects branch serving 200+ members, including reduced content-update friction for non-technical officers.",
     tags: ["Next.js", "React", "TypeScript", "Decap CMS", "RAG"],
     year: "2026",
     object: "screen",
     accent: "lavender",
     category: "Web Development · Content Management · AI Chatbot",
-    role: ["Frontend Development", "CMS Development", "Prompt Engineering"],
+    role: ["Showcase Slide Development", "CMS Development", "Prompt Engineering"],
     links: { github: "https://github.com/hknkappapsiprojects/Projects-Portal" },
     process: [
       {
@@ -136,16 +137,17 @@ export const projects: Project[] = [
       },
     ],
     lessons: [
-      "Subtlety usually reads as more polished than a big flashy effect.",
-      "Testing animations on a low-power device early catches a lot of jank.",
+      "A shared agile workflow kanban helps keep teams on schedule by setting on-time delivery goals of sprint milestones",
+      "Integrating CMS significantly helps non-technical admins by making content editing intuitive",
+      "AI chatbot resilience and response reliability can be measured by uninterrupted, context-grounded answers to queries",
     ],
   },
   {
     id: "project-03",
     title: "Data Science Analysis",
-    subtitle: "Project for COGS 108: Data Science in Practice",
+    subtitle: "Project for COGS 108: Data Science in Practice (team of 5)",
     description:
-      "Placeholder project description 3.",
+      "Cleaned and analyzed two datasets self-reported by 500 users, using Python libraries to investigate the relationship between the time spent engaging with various types of application categories and mental health.",
     tags: ["Data Science", "Python", "Research"],
     year: "2025",
     object: "book",
@@ -168,8 +170,9 @@ export const projects: Project[] = [
       },
     ],
     lessons: [
-      "Constraints from a hackathon timeline forced faster, better decisions.",
-      "Graphics work rewards a lot of small, quick iterations.",
+      "It is crucial to apply ethical data extraction techniques to derive valuable insights",
+      "Clear visuals can speak a thousand words when presenting data analysis findings",
+      "Outcome: the link between social media usage and poor mental health was stronger compared to the correlation between gaming and poor mental health",
     ],
   },
   {
@@ -253,7 +256,7 @@ export const playgrounds: Playground[] = [
           "Referenced tutorials: www.youtube.com/watch?v=R7sAomk2vR4, www.youtube.com/watch?v=kcHhg9JXE90, www.youtube.com/watch?v=bBbyMkzTNpg",
           "I wanted to focus on visual aesthetics and trying to really make audio waves visible",
         ],
-        video: "/playground/icam/the_shore.mp4",
+        video: "/playground/play-01/the_shore.mp4",
       },
       {
         about:
@@ -280,7 +283,7 @@ export const playgrounds: Playground[] = [
         about:
           "3D popsicle model built with Spline that plays music when clicked on.",
         notes: [
-          "Tutorial: //www.youtube.com/watch?v=TO-hT6jyDKU&t=66s",
+          "Tutorial: www.youtube.com/watch?v=TO-hT6jyDKU&t=66s",
           "First introduction into Spline, built just to learn the platform.",
         ],
         embed: "https://my.spline.design/popsicle-MlzVlGOrfBlTe69RZj1XoIN6/",
@@ -291,6 +294,7 @@ export const playgrounds: Playground[] = [
         notes: [
           "Part of a project for a 3D Modeling elective in high school",
           "Sculpted the mesh using reference images found online for multiple angles",
+          "Graphics work rewards a lot of small, quick iterations",
         ],
         image: "/playground/play-02/toothless.png"
       },
