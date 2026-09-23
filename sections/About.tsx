@@ -18,7 +18,7 @@ export default function About() {
               I come from a very international background — born in Japan 🇯🇵, 
               grew up in China 🇨🇳, studying in the US 🇺🇸.
             </p>
-            <span className="annotation">← write your own story here</span>
+            {/* <span className="annotation">← more to come</span> */}
           </div>
           <div className="paperclip">⌇</div>
         </div>
