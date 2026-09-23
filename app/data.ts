@@ -168,31 +168,39 @@ export const projects: Project[] = [
     subtitle: "Project for COGS 108: Data Science in Practice (team of 5)",
     description:
       "Cleaned and analyzed two datasets self-reported by 500 users, using Python libraries to investigate the relationship between the time spent engaging with various types of application categories and mental health.",
-    tags: ["Data Science", "Python", "Research"],
+    about:
+      "Cleaned and analyzed two datasets self-reported by 500 users, using Python libraries to investigate the relationship between the time spent engaging with various types of application categories and mental health. Through our research, we concluded that the link between social media usage and poor mental health was stronger compared to the correlation between gaming and poor mental health. ",
+    tags: ["Data Science", "Python", "Pandas", "Seaborn", "Matplotlib"],
     year: "2025",
     object: "book",
     accent: "sakura",
-    category: "Data analysis · Pandas · Seaborn · Matplotlib",
-    role: ["Concept", "Data Cleaning", "Written Output"],
+    category: "Data Analysis · Research Question · Presentation",
+    role: ["Data Finding", "Data Cleaning", "PowerPoint Creation", "Video Editing"],
     links: { github: "https://github.com/ao100605/Group078_WI25" },
+    gallery: [
+      { video: "/projects/project-03/COGS108-video.mp4" },
+    ],
     process: [
       {
-        title: "Sketch",
-        description: "Filled a few notebook pages with ideas before settling on the core visual concept.",
+        title: "Research Question",
+        image: "/projects/project-03/COGS108-RQ.png",
+        description: "Developed a detailed and measurable research question about a topic our team related to as college students.",
       },
       {
-        title: "Design",
-        description: "Prototyped the visual system in a shader playground to find the right feel.",
+        title: "Analyze Data",
+        image: "/projects/project-03/COGS108-analysis.png",
+        description: "Cleaned and analyzed two datasets found on Kaggle, exploring distribution, correlation, app category comparison, spatial analysis, and predictive models.",
       },
       {
-        title: "Build",
-        description: "Wrote the C++ rendering pipeline and tuned it until it ran smoothly in real time.",
+        title: "Present Findings",
+        image: "/projects/project-03/COGS108-outcome.png",
+        description: "Put together a clear 5-minute voiceover video presentation, reporting our research content from top to bottom with our conclusion.",
       },
     ],
     lessons: [
       "It is crucial to apply ethical data extraction techniques to derive valuable insights",
       "Clear visuals can speak a thousand words when presenting data analysis findings",
-      "Outcome: the link between social media usage and poor mental health was stronger compared to the correlation between gaming and poor mental health",
+      "Python libraries such as pandas, seaborn, and matplotlib makes Python the best programming language for data science",
     ],
   },
   {
