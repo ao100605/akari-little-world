@@ -66,7 +66,7 @@ export default function PlaygroundDetail({
       </div>
 
       <motion.p className="playground-page-kicker" {...fadeUp()}>
-        EXPERIMENT · {item.year}
+        PLAYGROUND · {item.year}
       </motion.p>
 
       <motion.div className="playground-page-header" {...fadeUp(0.05)}>

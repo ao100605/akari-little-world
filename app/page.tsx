@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useScroll, useSpring } from "framer-motion";
 import TopNav from "@/components/TopNav";
 import JourneyPlane from "@/components/JourneyPlane";
-import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Projects from "@/sections/Projects";
@@ -12,6 +11,7 @@ import Playground from "@/sections/Playground";
 import Experience from "@/sections/Experience";
 import Resume from "@/sections/Resume";
 import Contact from "@/sections/Contact";
+import Footer from "@/sections/Footer";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();

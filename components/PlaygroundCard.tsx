@@ -33,7 +33,7 @@ export default function PlaygroundCard({
           )}
         </div>
         <div>
-          <p className="tiny-label">EXPERIMENT</p>
+          <p className="tiny-label">PLAYGROUND</p>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </div>
@@ -45,7 +45,7 @@ export default function PlaygroundCard({
         </div>
 
         <span className="text-link">
-          VIEW PROJECT <span aria-hidden="true">↗</span>
+          VIEW PLAYGROUND <span aria-hidden="true">↗</span>
         </span>
       </Link>
     </motion.article>
