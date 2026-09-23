@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import type { Project } from "@/app/data";
 
 const OBJECT_GLYPH: Record<Project["object"], string> = {
@@ -38,6 +38,21 @@ export default function ProjectDetail({
   const gallery = project.gallery ?? [];
   const current = gallery[slide];
   const hasCarousel = gallery.length > 1;
+
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!lightboxImage) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxImage(null);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightboxImage]);
 
   return (
     <main className={`project-page ${project.accent}`}>
@@ -92,8 +107,16 @@ export default function ProjectDetail({
               // eslint-disable-next-line jsx-a11y/media-has-caption
               <video key={current.video} src={current.video} controls playsInline />
             ) : current?.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={current.image} src={current.image} alt={`${project.title} screenshot`} />
+              <button
+                key={current.image}
+                type="button"
+                className="project-hero-image-trigger"
+                onClick={() => setLightboxImage(current.image!)}
+                aria-label="View larger image"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={current.image} alt={`${project.title} screenshot`} />
+              </button>
             ) : (
               <div className="project-hero-placeholder">
                 <span className="glyph">{OBJECT_GLYPH[project.object]}</span>
@@ -135,7 +158,7 @@ export default function ProjectDetail({
       <motion.div className="project-detail-grid" {...fadeUp()}>
         <div>
           <h3>About</h3>
-          <p>{project.description}</p>
+          <p>{project.about ? (project.about) : (project.description)}</p>
         </div>
         <div>
           <h3>My Role</h3>
@@ -163,8 +186,15 @@ export default function ProjectDetail({
                 <h4 className="process-step-title">{step.title}</h4>
                 <div className="process-step-visual">
                   {step.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={step.image} alt={step.title} />
+                    <button
+                      type="button"
+                      className="process-step-image-trigger"
+                      onClick={() => setLightboxImage(step.image!)}
+                      aria-label={`View larger image of ${step.title}`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={step.image} alt={step.title} />
+                    </button>
                   ) : (
                     <span aria-hidden="true">✦</span>
                   )}
@@ -199,6 +229,39 @@ export default function ProjectDetail({
           <span className="project-nav-title">{nextProject.title}</span>
         </Link>
       </nav>
+
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            className="image-lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightboxImage(null)}
+          >
+            <motion.div
+              className="image-lightbox-card"
+              initial={{ opacity: 0, scale: 0.96, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 10 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="image-lightbox-close"
+                onClick={() => setLightboxImage(null)}
+                aria-label="Close image"
+              >
+                ×
+              </button>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={lightboxImage} alt="" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

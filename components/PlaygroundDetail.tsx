@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import type { Playground } from "@/app/data";
 
 const TYPE_GLYPH: Record<Playground["type"], string> = {
@@ -37,6 +37,21 @@ export default function PlaygroundDetail({
   const entries = item.entries;
   const current = entries[slide];
   const hasCarousel = entries.length > 1;
+
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!lightboxImage) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxImage(null);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightboxImage]);
 
   return (
     <main className={`playground-page type-${item.type}`}>
@@ -98,8 +113,16 @@ export default function PlaygroundDetail({
                 allow="fullscreen; autoplay"
               />
             ) : current.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={current.image} src={current.image} alt={`${item.title} preview`} />
+              <button
+                key={current.image}
+                type="button"
+                className="playground-stage-image-trigger"
+                onClick={() => setLightboxImage(current.image!)}
+                aria-label="View larger image"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={current.image} alt={`${item.title} preview`} />
+              </button>
             ) : (
               <div className="playground-stage-placeholder">
                 <span className="glyph" aria-hidden="true">{TYPE_GLYPH[item.type]}</span>
@@ -167,6 +190,39 @@ export default function PlaygroundDetail({
           <span className="playground-nav-title">{nextItem.title}</span>
         </Link>
       </nav>
+
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            className="image-lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightboxImage(null)}
+          >
+            <motion.div
+              className="image-lightbox-card"
+              initial={{ opacity: 0, scale: 0.96, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 10 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="image-lightbox-close"
+                onClick={() => setLightboxImage(null)}
+                aria-label="Close image"
+              >
+                ×
+              </button>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={lightboxImage} alt="" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

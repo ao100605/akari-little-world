@@ -172,6 +172,15 @@
   object-fit: contain;
 }
 
+.playground-stage-image-trigger {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+}
+
 .playground-stage iframe {
   position: absolute;
   inset: 0;

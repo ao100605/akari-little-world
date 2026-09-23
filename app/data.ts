@@ -21,6 +21,7 @@ export type Project = {
   object: "book" | "screen" | "note" | "photo";
   accent: "sakura" | "sky" | "matcha" | "lavender" | "butter";
   category?: string;
+  about?: string;
   role?: string[];
   links?: {
     live?: string;
@@ -77,7 +78,9 @@ export const projects: Project[] = [
     subtitle: "iOS mobile app vibe coding experiment",
     description:
       "A progressive skill-building app across 4 distinct practice modes for the Japanese 12-key flick keyboard, using a custom swipe-gesture engine with a toggleable hint system and real-time visual accuracy feedback.",
-    tags: ["SwiftUI", "Xcode", "UI/UX", "Education", "AI Agents"],
+    about:
+      "A progressive skill-building app across 4 distinct practice modes for the Japanese 12-key flick keyboard, using a custom swipe-gesture engine with a toggleable hint system and real-time visual accuracy feedback. The app includes a welcome guide that explains how to use and customize learning, as well as a timed minigame to engage players to get a high score by getting faster at typing.",
+      tags: ["SwiftUI", "Xcode", "UI/UX", "Education", "AI Agents"],
     year: "2026",
     object: "note",
     accent: "sky",
@@ -85,26 +88,32 @@ export const projects: Project[] = [
     role: ["UI/UX Design", "Level Design", "Interaction Design"],
     links: { github: "https://github.com/ao100605/kana-compass" },
     gallery: [
+      { video: "/projects/project-01/kana-compass-demo.mp4" },
       { image: "/projects/project-01/kana-compass-1.jpg" },
       { image: "/projects/project-01/kana-compass-2.jpg" },
       { image: "/projects/project-01/kana-compass-3.jpg" },
+      { image: "/projects/project-01/kana-compass-4.jpg" },
     ],
     process: [
       {
-        title: "Sketch",
-        description: "Rough wireframes and pen-and-paper layouts to work out the structure before touching code.",
+        title: "Prototype",
+        image: "/projects/project-01/kana-compass-prototype.png",
+        description: "Went back and forth with Claude chat to work out the main flick mechanic and general design as a prototype before prior to Xcode implementation.",
       },
       {
-        title: "Design",
-        description: "Mockups and a small component system, refined until the interface felt calm and consistent.",
+        title: "Design & Build",
+        image: "/projects/project-01/kana-compass-prompts.png",
+        description: "Designed and vibe coded one level at a time, progressively adding in more features that resemble the real keyboard. Ended wih a timed minigame for fun and engagement.",
       },
       {
-        title: "Build",
-        description: "Translated the designs into a working React app, iterating on interaction details along the way.",
+        title: "Test & Iterate",
+        image: "/projects/project-01/kana-compass-welcome.png",
+        description: "Tested each level thoroughly to find any bugs, iterating on interaction details and animation along the way. Added a welcome guide since test users were confused at first.",
       },
     ],
     lessons: [
-      "Prototyping various design with ChatGPT first saved a lot of rework later",
+      "Prototyping various designs with Claude chat first saved a lot of rework later",
+      "Being specific with purpose and instructions is important when prompting coding agents",
       "Small motion details make an interface feel much more alive",
       "Initial instructions make a app feel much more welcoming and easy to learn",
     ],
@@ -114,26 +123,37 @@ export const projects: Project[] = [
     title: "HKN Projects Portal",
     subtitle: "Full stack website with an AI chatbot (team of 7)",
     description:
-      "A full-stack web portal for UCSD's HKN projects branch serving 200+ members, including reduced content-update friction for non-technical officers.",
-    tags: ["Next.js", "React", "TypeScript", "Decap CMS", "RAG"],
+      "A full-stack web application for UCSD's HKN projects branch serving 200+ members, including reduced content-update friction for non-technical officers and AI chatbot Ramsey that answers questions within a defined scope.",
+    about: 
+      "A web application that showcases student engineering projects, events, and resources for UCSD's HKN projects branch. The portal features a browser-based content management system (CMS) that allows non-technical officers to add and update content without touching the codebase, and an AI chatbot named Ramsey that uses Retrieval-Augmented Generation (RAG) to answer questions about HKN. The site is deployed on Netlify with an automated CI/CD pipeline that rebuilds and re-indexes the chatbot's knowledge base on every deployment.",
+    tags: ["Next.js", "React", "TypeScript", "CMS", "CI/CD", "RAG"],
     year: "2026",
     object: "screen",
     accent: "lavender",
-    category: "Web Development · Content Management · AI Chatbot",
-    role: ["Showcase Slide Development", "CMS Development", "Prompt Engineering"],
-    links: { github: "https://github.com/hknkappapsiprojects/Projects-Portal" },
+    category: "Web Development · Content Management · CI/CD Pipeline · AI Chatbot",
+    role: ["Showcase Page Frontend", "CMS Integration", "Chatbot Testing"],
+    links: { live: "https://hkn-projects.netlify.app", github: "https://github.com/hknkappapsiprojects/Projects-Portal" },
+    gallery: [
+      { image: "/projects/project-02/projects-portal-poster.png" },
+      { image: "/projects/project-02/projects-portal-1.png" },
+      { image: "/projects/project-02/projects-portal-2.png" },
+      { image: "/projects/project-02/projects-portal-3.png" },
+    ],
     process: [
       {
-        title: "Sketch",
-        description: "Mapped out the page flow and the moments that deserved a little motion.",
-      },
-      {
         title: "Design",
-        description: "Built a moodboard of transitions and timing curves before writing any animation code.",
+        image: "/projects/project-02/projects-portal-figma.png",
+        description: "Designed wireframes and high-fidelity mockups in Figma prior to development, establishing the visual layout and user experience of the portal before implementation.",
       },
       {
         title: "Build",
-        description: "Implemented the experience in Next.js, tuning easing and performance on real devices.",
+        image: "/projects/project-02/projects-portal-CMS.jpg",
+        description: "Built the showcase page frontend with a countdown feature. Integrated CMS to enable non-technical officers to manage site content without modifying the codebase.",
+      },
+      {
+        title: "Present",
+        image: "/projects/project-02/projects-portal-present.png",
+        description: "Officially presented our project poster and live website at HKN's annual Projects Showcase.",
       },
     ],
     lessons: [
